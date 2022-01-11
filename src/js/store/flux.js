@@ -12,12 +12,18 @@ const getState = ({ getStore, getActions, setStore }) => {
 					background: "white",
 					initial: "white"
 				}
-			]
+			],
+			form:{
+				nombre:'',
+				aprellido:''
+			}
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
-			exampleFunction: () => {
-				getActions().changeColor(0, "green");
+			exampleFunction: (nombre,apellido) => {
+				
+				setStore({form:{nombre:nombre, apellido:apellido}})	
+				console.log(getStore())
 			},
 			loadSomeData: () => {
 				/**
